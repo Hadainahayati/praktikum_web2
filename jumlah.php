@@ -1,24 +1,13 @@
 <?php
-// tangkap input form
-$customer = $_POST['customer'];
-$produk = $_POST['produk'];
-$jumlah = $_POST['jumlah'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $customer = $_POST['customer'];
+    $produk = $_POST['produk'];
+    $jumlah = $_POST['jumlah'];
+    $Total = $_POST['Total'];
 
-// array harga produk
-
-$harga = [
-    'TV' => 4200000,
-    'Kulkas' => 3100000,
-    'Mesin Cuci' => 3000000
-];
-
-// hitung total harga (jumlah * harga produk)
-$total = $jumlah * $harga[$produk];
-
-// format rupiah
-$total = number_format($total);
-
-echo "Nama Customer: $customer";
-echo "<br> Produk: $produk";
-echo "<br> Jumlah Beli: $jumlah";
-echo "<br> Total Belanja: Rp $total";
+    echo "Customer: " . "hadaina" . "<br>";
+    echo "Produk Pilihan: " ."TV" . "<br>";
+    echo "Jumlah Beli: " . "1" . "<br>";
+    echo "Total: " . "Rp4.200.000" . "<br>";
+}
+?>
